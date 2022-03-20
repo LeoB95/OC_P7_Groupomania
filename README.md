@@ -36,7 +36,7 @@ DB_Name='groupomania'
 ```
 SOURCE (chemin vers le fichier database.sql);
 ```
-(Remplacer les slash "\" du chemin d'accès par ceux-là "/"; exemple "C/users/public/bureau/projet/database.sql")
+(Remplacer les slash du chemin d'accès par ceux-là "/"; exemple "C/users/public/bureau/projet/database.sql")
 
 ### Démarrer le serveur backend
 ```
