@@ -5,20 +5,40 @@
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Démarrer l'application
 ```
 npm run serve
 ```
+Aller sur le lien http://localhost:8080/
 
-### Compiles and minifies for production
+
+# Database
+Après avoir installé MySQL sur votre machine et créer un mot de passe pour "root"
+
+
+# backend
+
+## Project setup
 ```
-npm run build
+npm install
+```
+## Installer dotenv
+```
+npm install dotenv
+```
+Créer un fichier .env avec
+DB_USERNAME='root'
+DB_PASSWORD='votreMDPdeMySQL'
+DB_HOST='localhost'
+DB_Name='groupomania'
+
+### Dans le terminal MySQL, import du fichier database.sql
+```
+SOURCE (chemin vers le fichier database.sql);
 ```
 
-### Lints and fixes files
+### Démarrer le serveur backend
 ```
-npm run lint
+node server
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+ 
