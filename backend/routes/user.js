@@ -6,9 +6,9 @@ const auth = require("../middleware/authGetUser");
 const authTokenId = require("../middleware/auth");
 const validEmail = require("../middleware/email");
 
-router.delete("/delete/:id", userCtrl.delete);
-router.post("/signup", validEmail, multer, userCtrl.signup);
-router.post("/login", userCtrl.login);
+router.delete("/delete/:id", auth, userCtrl.delete);
+router.post("/signup", auth, validEmail, multer, userCtrl.signup);
+router.post("/login", auth, userCtrl.login);
 router.put("/modify/:id", authTokenId, multer, userCtrl.modifyPP);
 router.put("/modifyAccount/:id", authTokenId, userCtrl.modifAccount);
 router.put("/modifyPassword/:id", authTokenId, userCtrl.modifyPassword);
