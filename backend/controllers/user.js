@@ -6,7 +6,7 @@ const fs = require("fs");
 
 
 exports.delete = (req, res, next) => {
-    if (req.body.password) {
+    if (req.body.password || req.body.admin == true) {
         let sql = `SELECT * FROM user WHERE id=?`;
         pool.execute(sql, [req.params.id], function (err, result) {
             let user = result[0];
