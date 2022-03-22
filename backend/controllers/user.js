@@ -6,7 +6,7 @@ const fs = require("fs");
 
 
 exports.delete = (req, res, next) => {
-    if (req.body.password) {
+    if (req.body.password & req.body.admin == true) {
         let sql = `SELECT * FROM user WHERE id=?`;
         pool.execute(sql, [req.params.id], function (err, result) {
             let user = result[0];
@@ -15,7 +15,7 @@ exports.delete = (req, res, next) => {
                     if (!valid) {
                         return res.status(401).json({ error: " Mot de passe incorrect !" });
                     } else {
-                        bcrypt.hash(req.body.password, 10)
+                        bcrypt.hash(req.body.password, req.body.admin 10)
                             .then(hash => {
                                 let sql = `DELETE FROM user WHERE id=?`;
                                 pool.execute(sql, [req.params.id], function (err, result) {
